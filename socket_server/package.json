@@ -1,0 +1,14 @@
+{
+  "author": "",
+  "name": "serverstats",
+  "version": "0.0.0",
+  "repository": "websockets/ws",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "~4.16.3",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.23",
+    "object-sizeof": "^1.2.0",
+    "vue": "^2.5.17"
+  }
+}

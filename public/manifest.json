@@ -1,0 +1,23 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "eventPage.js" ]
+   },
+   "browser_action": {
+      "default_icon": "logo.png",
+      "default_title": "Click to start!"
+   },
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "description": "A Debugging tool to help you test Websocket APIs",
+   "icons": {
+      "128": "logo.png",
+      "16": "logo.png",
+      "48": "logo.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuGK7AYDUtZq6YLCZ0UkB9NiK7MndAgG4a0ChOtFq4EFOcwc8OyxjTtO2rSvCoH4sKAdmc3rssOJFhHh5K/cwWLZiik7pdY7vzh1INgfx7rGW1fsCRCobH94/KKA8B8fFdRFYIa2wcSAZepXawst1PaSadx3lqmMu34h0bvyCqTItblaWJ61Dk/T4nVxR6zyGErIG/Od3UkRCVQHpZRRIDN/C7bodCzsRj5erhTKuP6OeF9UF8twpsvZMh4S4HwhoOIGJhfjKK1Smdis7JzbiRCXt2gKrGPMfbr46YgbTIolbsEJk5vSnFMe3fXGFp4cHqBWGepVGYYmgkC1t2F/xxQIDAQAB",
+   "manifest_version": 2,
+   "name": "Smart Websocket Client",
+   "permissions": [  ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0"
+}

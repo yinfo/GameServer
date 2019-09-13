@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sansara Socket Test</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+</head>
+
+<body>
+
+
+<div id="app">
+
+    <v-app>
+        <v-content>
+            <v-container>{{sessionId}}</v-container>
+            <div>
+                <v-tabs
+                        v-model="active"
+                        color="blue"
+                        dark
+                        slider-color="yellow"
+                >
+                    <v-tab
+                            v-for="n in 3"
+                            :key="n"
+                            ripple
+                    >
+                        Item {{ n }}
+
+                    </v-tab>
+                    <v-tab-item
+                            v-for="n in 3"
+                            :key="n"
+                    >
+                        <!--<v-card flat>-->
+                        <!--<v-card-text>{{ n }}</v-card-text>-->
+                        <!--</v-card>-->
+                        <v-flex xs6>
+                            <v-textarea
+                                    name="input-7-1"
+                                    label=""
+                                    :value="n"
+                                    hint="Hint text"
+                            ></v-textarea>
+                        </v-flex>
+                    </v-tab-item>
+                </v-tabs>
+
+                <div class="text-xs-center mt-3">
+                    <v-btn @click="next">next tab</v-btn>
+                </div>
+            </div>
+
+
+        </v-content>
+    </v-app>
+
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>

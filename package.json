@@ -1,0 +1,36 @@
+{
+  "name": "mongodb-websockets_ws-server",
+  "version": "0.0.7",
+  "description": "mongodb-socketio-server",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon --inspect index"
+  },
+  "keywords": [
+    "express",
+    "mongodb"
+  ],
+  "author": "Igor Yarovenko OWL-studio",
+  "license": "",
+  "dependencies": {
+    "async-limiter": "^1.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-session": "~1.15.6",
+    "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
+    "moment-timezone": "0.5.23",
+    "mongoose": "^5.3.0",
+    "morgan": "^1.9.1",
+    "object-sizeof": "^1.2.0",
+    "redis": "^2.8.0",
+    "uniqid": "^5.0.3",
+    "uuid": "~3.3.2",
+    "winston": "3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

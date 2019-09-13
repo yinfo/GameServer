@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Tahoma, Geneva, sans-serif;
+        }
+
+        div {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+
+<label for="logpass" width="400">Отправить на сервер</label>
+<button onclick="login()">Send</button>
+<input type="text" id="logpass" size="100" style="height:30px;">
+
+<br><br>
+
+<label for="nickname" width="400">Поменять ник</label>
+<button onclick="changeNick()">Send</button>
+<input type="text" id="nickname" size="100" style="height:30px;">
+<br><br>
+
+<label for="presetChangeField" width="400" >Меняем заклинания</label>
+<button onclick="presetChangeBtn()">presetChange</button>
+<textarea  id="presetChangeField" cols="80" rows="40"> </textarea>
+
+<br><br>
+
+<script>
+    try {
+        document.getElementById('logpass').value
+            = localStorage.getItem("logpass")
+            || '{"scr":"login","login":"12345","password":"12345"}'
+        document.getElementById('nickname').value
+            = localStorage.getItem("nickname")
+            || '{"scr":"changeNick","newNick":"Новый ник","sessionId":"awle48r4jnk18rkj"}'
+        document.getElementById('presetChangeField').value
+            = localStorage.getItem("presetChangeCode")
+    } catch (e) {
+        console.log(e.message)
+    }
+
+
+    let host = window.document.location.host.replace(/:.*/, '');
+    let ws = new WebSocket('ws://' + host + ':8080');
+    ws.onmessage = function (event) {
+        console.log(event.data)
+    };
+
+    function login() {
+        let logpassValue = document.getElementById('logpass').value
+        localStorage.setItem("logpass", logpassValue)
+        ws.send(logpassValue)
+    }
+
+    function changeNick() {
+        let changeNickCommand = document.getElementById('nickname').value
+        localStorage.setItem("nickname", changeNickCommand)
+        ws.send(changeNickCommand)
+    }
+
+    function presetChangeBtn() {
+        let presetChangeCommand = document.getElementById('presetChangeField').value
+        localStorage.setItem("presetChangeCode", presetChangeCommand)
+        ws.send(presetChangeCommand)
+    }
+</script>
+
+</body>
+</html>

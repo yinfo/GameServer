@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Websocket Client</title>
+    <meta charset="utf-8">
+</head>
+<body style="margin: 0;background: #EAEBEC;">
+
+<div id="top_panel">
+
+    <button id = "btnTest"
+            onclick="auto_connect() ">Auto connect
+    </button>
+    <button id = "btnSend"
+            onclick="send() ">Send
+    </button>
+</div>
+
+
+
+<div id="ReactApp"></div>
+<script src="common.js"></script>
+<script src="app.js"></script>
+</body>
+
+
+<script>
+
+
+    window.addEventListener("load", event => {
+        let res1 = document.getElementsByClassName("K-QQU")
+
+
+        for (let inp of res1) {
+            inp.focus()
+            inp.value = 'ws://localhost:8080/'
+            inp.text = 'ws://localhost:8080/'
+            break
+        }
+
+        auto_connect()
+
+    })
+
+
+    function send() {
+        let res3 = document.getElementsByClassName("_3mEC0")
+        for (let btn of res3) {
+            if (btn.innerHTML === 'Send') {
+                btn.click()
+                break
+            }
+
+        }
+    }
+
+    function auto_connect() {
+        // let res2 = document.getElementsByClassName("ace_identifier")
+        // let res2 = document.getElementsByClassName("ace_content")
+        // let res2 = document.getElementsByClassName("ace_text-input")
+        // console.log('res2', res2)
+        // for (let inp of res2) {
+        //     inp.innerHTML = `
+        //         <div class="ace_line" ><span class="ace_identifier">111</span></div>
+        //         <div class="ace_line" ><span class="ace_identifier">222</span></div>
+        //
+        //     break
+        // }
+
+        // let res3 = document.getElementsByClassName("_3mEC0")
+        // for (let btn of res3) {
+        //     if (btn.innerHTML === 'Connect') {
+        //         btn.click()
+        //         break
+        //     }
+        //
+        // }
+        window.setInterval(function(){
+
+
+            let res2 = document.getElementsByClassName("_3mEC0")
+            for (let btn of res2) {
+                if (btn.innerHTML === 'Connect') {
+                    btn.click()
+                    break
+                }
+
+            }
+        }, 1000)
+
+    }
+
+
+
+
+</script>
+
+<style>
+
+    #top_panel {
+        /*float: right*/
+        position: absolute; right:17px; top:25px;
+    }
+    /*#contentEditor {*/
+        /*height: 150px*/
+    /*}*/
+    ._2XXm4 {
+        height: 150px
+    }
+
+</style>
+
+</html>
